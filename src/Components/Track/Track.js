@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import "./Track.css";
 
 class Track extends Component {
@@ -7,16 +7,18 @@ class Track extends Component {
       <div className="Track">
         <div className="Track-information">
           <h3>
-            {/* track name will go here  */}
+            {this.props.track.name}
           </h3>
           <p>
-            {/*  track artist will go here | track album will go here */}
+            {this.props.track.artist}, 
+            {this.props.track.album}
           </p>
         </div>
         <a className="Track-action">
-          {/*  + or - will go here  */}
-          </a>
+        </a>
       </div>
     );
   }
 }
+
+export default Track;
