@@ -2,6 +2,11 @@ import React, {Component} from "react";
 import "./Track.css";
 
 class Track extends Component {
+
+  addTrack() {
+    this.props.track = this.props.onAdd;
+  }
+
   render() {
     return (
       <div className="Track">

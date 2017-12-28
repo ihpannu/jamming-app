@@ -10,6 +10,7 @@ class TrackList extends Component {
           <Track 
           key={track.id}
           track={track}
+          onAdd={this.props.onAdd}
           />
         )}
       </div>
@@ -17,4 +18,4 @@ class TrackList extends Component {
   }
 }
 
-export default TrackList;
+export default TrackList
