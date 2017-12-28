@@ -5,11 +5,16 @@ class Track extends Component {
   constructor(props) {
       super(props);
       this.addTrack = this.addTrack.bind(this);
+      this.removeTrack = this.removeTrack.bind(this);
   }
 
 
   addTrack() {
     this.props.onAdd(this.track.onAdd);
+  }
+
+  removeTrack() {
+    this.props.onRemove(this.track.onRemove);
   }
 
   render() {
@@ -24,9 +29,14 @@ class Track extends Component {
             {this.props.track.album}
           </p>
         </div>
-          {this.props.shouldAdd && 
+          {/* {this.props.shouldAdd &&  */}
           <a className="Track-action" 
-          onClick={this.addTrack}>+</a>}
+          onClick={this.addTrack}>+</a>
+
+       
+          <a className="Track-action" 
+          onClick={this.removeTrack}>-</a>
+
       </div>
     );
   }
