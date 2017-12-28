@@ -18,21 +18,28 @@ class App extends Component {
   }
 
   addTrack(track) {
-    if (this.state.playlistTracks.every(plTrack => plTrack.id !== track.id)) {
+    let tracks = this.state.playlistTracks;
 
-      let newPlaylistTracks = this.state.playlistTracks.concat(track);
-      this.setState({ playlistTracks: newPlaylistTracks });
+    if (!tracks.some(playlistTrack => playlistTrack.id === track.id)) {
+      tracks.push(track);
+      this.setState({ playlistTracks: tracks });
+    } else {
+      console.log("Song Already Added to Playlist");
     }
   }
 
   removeTrack(track) {
-    let newPlaylistTracks = this.state.playlistTracks.filter(playlistTrack => playlistTrack !== track.id);
+    let newPlaylistTracks = this.state.playlistTracks.filter(
+      playlistTrack => playlistTrack !== track.id
+    );
     this.setState({
       playlistTracks: newPlaylistTracks
     });
   }
 
-
+  updatePlaylistname(name) {
+    this.setState({ playlistName: name });
+  }
 
   render() {
     return (
@@ -43,9 +50,10 @@ class App extends Component {
         <div className="App">
           {/* <!-- Add a SearchBar component --> */}
           <div className="App-playlist">
-            <SearchResults searchResults={this.state.searchResults}
-             onAdd={this.addTrack}
-             />
+            <SearchResults
+              searchResults={this.state.searchResults}
+              onAdd={this.addTrack}
+            />
             <Playlist
               playlistName={this.state.playlistName}
               playlistTracks={this.state.playlistTracks}
