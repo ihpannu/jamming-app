@@ -2,9 +2,14 @@ import React, {Component} from "react";
 import "./Track.css";
 
 class Track extends Component {
+  constructor(props) {
+      super(props);
+      this.addTrack = this.addTrack.bind(this);
+  }
+
 
   addTrack() {
-    this.props.track = this.props.onAdd;
+    this.props.onAdd(this.track.onAdd);
   }
 
   render() {
@@ -19,8 +24,9 @@ class Track extends Component {
             {this.props.track.album}
           </p>
         </div>
-        <a className="Track-action">
-        </a>
+          {this.props.shouldAdd && 
+          <a className="Track-action" 
+          onClick={this.addTrack}>+</a>}
       </div>
     );
   }
