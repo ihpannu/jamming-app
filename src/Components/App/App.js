@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 
-// import SearchBar from '../SearchBar/SearchBar';
+import SearchBar from '../SearchBar/SearchBar';
 import Playlist from '../Playlist/Playlist';
 import SearchResults from '../SearchResults/SearchResults';
 
@@ -15,6 +15,8 @@ class App extends Component {
     };
     this.addTrack = this.addTrack.bind(this);
     this.removeTrack = this.removeTrack.bind(this);
+    this.savePlaylist = this.savePlaylist.bind(this);
+    this.search = this.search.bind(this);
   }
 
   addTrack(track) {
@@ -41,14 +43,25 @@ class App extends Component {
     this.setState({ playlistName: name });
   }
 
+  savePlaylist() {
+    let tracks = this.props.playlistTracks;
+    let trackURIs = tracks.map(track => track.uri);
+  }
+
+
+  search(term) {
+    console.log(term);
+  }
+
   render() {
     return (
       <div>
         <h1>
           Ja<span className="highlight">mmm</span>ing
         </h1>
-        <div className="App">
-          {/* <!-- Add a SearchBar component --> */}
+        <div className="App">¯
+          <SearchBar onSearch={this.search} />
+
           <div className="App-playlist">
             <SearchResults
               searchResults={this.state.searchResults}
@@ -58,6 +71,7 @@ class App extends Component {
               playlistName={this.state.playlistName}
               playlistTracks={this.state.playlistTracks}
               onRemove={this.removeTrack}
+              onSave={this.savePlaylist}
             />
           </div>
         </div>

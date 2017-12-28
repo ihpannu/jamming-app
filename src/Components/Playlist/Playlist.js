@@ -21,7 +21,9 @@ class Playlist extends Component {
           onAdd={this.props.onAdd}
           onRemove={this.props.onRemove}
         />
-        <a className="Playlist-save">Save to Spotify</a>
+        <a className="Playlist-save"
+        onClick={this.props.onSave}
+        >Save to Spotify</a>
       </div>
     );
   }
