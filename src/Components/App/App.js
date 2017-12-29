@@ -4,6 +4,7 @@ import './App.css';
 import SearchBar from '../SearchBar/SearchBar';
 import Playlist from '../Playlist/Playlist';
 import SearchResults from '../SearchResults/SearchResults';
+import Spotify from '../../util/Spotify';
 
 class App extends Component {
   constructor(props) {
@@ -45,12 +46,18 @@ class App extends Component {
 
   savePlaylist() {
     let tracks = this.props.playlistTracks;
-    let trackURIs = tracks.map(track => track.uri);
+    let trackUris = tracks.map(track => track.uri);
   }
 
 
   search(term) {
-    console.log(term);
+    if (term !== "") {
+      Spotify.search(term).then(results => {
+        console.log(results);
+      });
+    } else {
+      this.setState({ searchResults: [] });
+    }
   }
 
   render() {
