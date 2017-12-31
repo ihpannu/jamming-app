@@ -1,7 +1,7 @@
 // Ajax call to Spotify API
 
 const clientID = "a437b2ac07cb4dbb9a59b4b552b0a3de";
-const redirectURI = 'http://localhost:3000/';
+const redirectURI = 'http://high-brothers.surge.sh/';
 let accessToken;
 
 let Spotify = {
