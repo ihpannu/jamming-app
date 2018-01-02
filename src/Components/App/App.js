@@ -27,7 +27,7 @@ class App extends Component {
   //If track is not found in playlist, adds the track
   addTrack(track) {
     let tracks = [...this.state.playlistTracks, track];
-    tracks.push(track);
+    // tracks.push(track);
 
     this.setState({ playlistTracks: tracks });
   }
