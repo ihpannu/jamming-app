@@ -45,8 +45,9 @@ class App extends Component {
   savePlaylist() {
     const trackURIs = this.state.playlistTracks.map(track => track.uri);
     Spotify.savePlaylist(this.state.playlistName, trackURIs);
-    // const playlist = "New Playlist";
     this.setState({ playlistName: "New Playlist", playlistTracks: [] });
+    alert("Saved to Spotify");
+
   }
 
   //Calls on the util file to run the AJAX call for Spotify API, then sets state
