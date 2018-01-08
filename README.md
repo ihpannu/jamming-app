@@ -1,6 +1,15 @@
-Jamming Web App
+## Jammming Web App
 
-User of Spotify can sign in with their Spotify account and create a playlist of their <br>
-favorite tracks and save it back to Spotify real quick. <br>
+Users of spotify can search for songs, create a playlist and save the playlist in your spotify account.
+<br>
 
 ![gif](https://media.giphy.com/media/xULW8MrR8F5f0YuW8o/giphy.gif)
+
+
+
+With this app you can search for songs, create a playlist and save the playlist in your spotify account. Also is a project from codeacademy React course.
+
+
+## Installation
+
+To run this app, clone this repo, cd into jammming folder and run the command npm start.
