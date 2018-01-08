@@ -1,6 +1,6 @@
 // Ajax call to Spotify API
 
-const clientID = "a437b2ac07cb4dbb9a59b4b552b0a3de";
+const clientID = "Get your client Id from Spotify Dev Account";
 const redirectURI = "http://jamwithme.surge.sh/";
 let accessToken;
 
